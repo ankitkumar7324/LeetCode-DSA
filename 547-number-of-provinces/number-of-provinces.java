@@ -20,7 +20,7 @@ class Solution {
         {
             graph.add(new ArrayList<>());
         }
-
+        // to change adjacency matrix to list
         for(int i=0;i<n;i++)
         {
             for(int j=0;j<n;j++)
@@ -28,6 +28,7 @@ class Solution {
                 if(isConnected[i][j]==1 && i!=j)
                 {
                     graph.get(i).add(j);
+                    graph.get(j).add(i);
                 }
             }
         }

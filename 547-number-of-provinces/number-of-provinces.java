@@ -28,7 +28,7 @@ class Solution {
                 if(isConnected[i][j]==1 && i!=j)
                 {
                     graph.get(i).add(j);
-                    graph.get(j).add(i);
+                    // graph.get(j).add(i);
                 }
             }
         }

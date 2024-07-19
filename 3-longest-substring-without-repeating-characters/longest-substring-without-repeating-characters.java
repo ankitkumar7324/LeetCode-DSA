@@ -4,23 +4,21 @@ class Solution {
         int l=0;
         int r=0;
         int maxlen=0;
-        int f=-1;
-        int hash[]=new int[256];
-        Arrays.fill(hash,f);
+        
         int n= s.length();
-
+        Set<Character> set = new HashSet<>();
         while(r<n)
         {
-            if(hash[s.charAt(r)]!=-1)
+            char c= s.charAt(r);
+            while(set.contains(c))
             {
-                if(hash[s.charAt(r)]>=l)
-                {
-                    l=hash[s.charAt(r)]+1;
-                }
+                set.remove(s.charAt(l));
+                l++;
             }
+            set.add(c);
             int len=r-l+1;
             maxlen=Math.max(len,maxlen);
-            hash[s.charAt(r)]=r;
+            
             r++;
         }
         return maxlen;

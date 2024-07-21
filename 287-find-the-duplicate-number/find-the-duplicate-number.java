@@ -2,13 +2,14 @@ class Solution {
     public int findDuplicate(int[] nums) {
         for(int i=0;i<nums.length;i++)
         {
-            int ind = Math.abs(nums[i]);
-            if(nums[ind]<0)
+            int num = Math.abs(nums[i]);
+            int idx=num-1;
+            if(nums[idx]<0)
             {
-                return ind;
+                return num;
             }
 
-            nums[ind]=-nums[ind];
+            nums[idx]=-nums[idx];
         }
         return -1;
     }
